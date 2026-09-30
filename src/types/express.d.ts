@@ -6,7 +6,7 @@ declare global {
       auth?: {
         role: UserRole;
       };
-      requestId?: string;
+      requestId: string;
     }
   }
 }
