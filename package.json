@@ -1,0 +1,30 @@
+{
+  "name": "interview-backend",
+  "version": "1.0.0",
+  "description": "Minimal Node.js/TypeScript backend (controller-service-repository) for interviews",
+  "main": "build/server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node build/src/server.js",
+    "dev": "ts-node src/server.ts",
+    "test": "jest",
+    "lint": "prettier --check \"src/**/*.ts\" \"test/**/*.ts\""
+  },
+  "dependencies": {
+    "express": "4.19.2",
+    "pino": "9.3.2",
+    "zod": "3.23.8"
+  },
+  "devDependencies": {
+    "@types/express": "4.17.21",
+    "@types/jest": "29.5.12",
+    "@types/node": "20.14.10",
+    "@types/supertest": "6.0.2",
+    "jest": "29.7.0",
+    "prettier": "3.3.3",
+    "supertest": "7.0.0",
+    "ts-jest": "29.2.2",
+    "ts-node": "10.9.2",
+    "typescript": "5.5.3"
+  }
+}

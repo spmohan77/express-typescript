@@ -1,0 +1,12 @@
+services:
+  api:
+    build: .
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - LOG_LEVEL=info
+      # Provide this securely at runtime; do not commit real keys.
+      # Example: AUTH_API_KEYS=admin-secret:ADMIN,member-secret:MEMBER
+      - AUTH_API_KEYS
