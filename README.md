@@ -105,25 +105,3 @@ test/            tests
 | `npm start`     | Run the compiled server              |
 | `npm test`      | Run the test suite                   |
 | `npm run lint`  | Check formatting with Prettier       |
-
-
-## Authentication and authorization
-
-The users API now requires an API key in `x-api-key`.
-
-Configure keys at runtime:
-
-```bash
-AUTH_API_KEYS='admin-secret:ADMIN,member-secret:MEMBER' npm run dev
-```
-
-Examples:
-
-```bash
-curl -H 'x-api-key: member-secret' http://localhost:3000/api/v1/users
-curl -X POST http://localhost:3000/api/v1/users   -H 'x-api-key: admin-secret'   -H 'Content-Type: application/json'   -d '{"name":"New Person","email":"new@example.com","role":"MEMBER"}'
-```
-
-`GET` operations require authentication. Creating users requires the `ADMIN` role.
-
-For a production system, API keys should be stored and rotated through a secret manager or replaced with an identity provider/JWT-based authentication system. The in-memory repository is intentionally retained because this is an interview exercise.
